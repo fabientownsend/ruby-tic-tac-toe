@@ -23,6 +23,10 @@ class Board
     !win?("X") && !win?("O") && @board.flatten.none?(&:nil?)
   end
 
+  def placeholder_available
+    @board.flatten.map.with_index { |spot, index| index if spot.nil? }.compact
+  end
+
   private
 
   def same_value?(row, mark)

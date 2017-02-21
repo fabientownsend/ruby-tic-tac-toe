@@ -155,6 +155,16 @@ RSpec.describe Board do
     expect(board.tie?).to be(false)
   end
 
+  it "returns the placeholders available" do
+    string_to_board(
+      "O|O| |"\
+      "X| |X|"\
+      "O|X| |"
+    )
+
+    expect(board.placeholder_available).to eq([2, 4, 8])
+  end
+
   private
 
   def string_to_board(string_board)
