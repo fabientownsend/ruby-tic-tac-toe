@@ -1,4 +1,4 @@
-require 'computer'
+require 'players/computer'
 require 'board'
 
 RSpec.describe Computer do
