@@ -1,4 +1,4 @@
-require 'board'
+require 'game_play/board'
 
 RSpec.describe Board do
   let(:board) { Board.new }

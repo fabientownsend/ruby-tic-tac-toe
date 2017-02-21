@@ -1,5 +1,5 @@
 require 'players/computer'
-require 'board'
+require 'game_play/board'
 
 RSpec.describe Computer do
   let(:board) { Board.new }

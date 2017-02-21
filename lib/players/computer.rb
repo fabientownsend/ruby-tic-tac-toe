@@ -1,3 +1,5 @@
+require 'game_play/board'
+
 class Computer
   attr_reader :mark
 
