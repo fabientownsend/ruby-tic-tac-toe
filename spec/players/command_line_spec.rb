@@ -1,5 +1,5 @@
-require 'players/command_line'
 require 'game_interface/interface_io'
+require 'players/command_line'
 
 RSpec.describe CommandLine do
   let(:input) { StringIO.new("0") }
