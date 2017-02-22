@@ -165,6 +165,36 @@ RSpec.describe Board do
     expect(board.placeholder_available).to eq([2, 4, 8])
   end
 
+  it "returns game over when tie" do
+    string_to_board(
+      "O|O|X|"\
+      "X|X|O|"\
+      "O|O|X|"
+    )
+
+    expect(board.over?).to be(true)
+  end
+
+  it "returns game over when a win" do
+    string_to_board(
+      "X|O|X|"\
+      " |X|O|"\
+      "O|O|X|"
+    )
+
+    expect(board.over?).to be(true)
+  end
+
+  it "doesn't return game over when it's not" do
+    string_to_board(
+      "X|O|X|"\
+      " | |O|"\
+      "O|O|X|"
+    )
+
+    expect(board.over?).to be(false)
+  end
+
   private
 
   def string_to_board(string_board)

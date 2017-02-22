@@ -1,6 +1,7 @@
 class Board
   def initialize(size = 3)
     @board = Array.new(size) { Array.new(size) }
+    @marks = %w(X O)
   end
 
   def current
@@ -20,7 +21,11 @@ class Board
   end
 
   def tie?
-    !win?("X") && !win?("O") && @board.flatten.none?(&:nil?)
+    @board.flatten.none?(&:nil?) && @marks.none? { |mark| win?(mark) }
+  end
+
+  def over?
+    tie? || @marks.any? { |mark| win?(mark) }
   end
 
   def placeholder_available
