@@ -1,4 +1,4 @@
-require "board_render"
+require "game_interface/board_render"
 
 RSpec.describe BoardRender do
   it "render an empty board" do

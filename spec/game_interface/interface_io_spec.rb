@@ -1,4 +1,4 @@
-require 'interface_io'
+require 'game_interface/interface_io'
 
 RSpec.describe InterfaceIo do
   let(:input) { StringIO.new("world\n") }
